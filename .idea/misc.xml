@@ -193,7 +193,7 @@
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_account.xml" value="0.29069767441860467" />
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_app_theme.xml" value="0.20789473684210527" />
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_cart.xml" value="0.25" />
-        <entry key="app/src/main/res/layouts/home_screen/layout/fragment_home_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layouts/home_screen/layout/fragment_home_screen.xml" value="0.5" />
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_search.xml" value="0.25" />
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_track_order.xml" value="0.246875" />
         <entry key="app/src/main/res/layouts/home_screen/layout/fragment_transaction_history.xml" value="0.20789473684210527" />
