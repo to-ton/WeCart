@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/title_white"
+    app:cardCornerRadius="15dp">
+
+    <LinearLayout
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/weCart"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/wecart_logo_no_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please confirm your email address"
+            android:gravity="center"
+            android:fontFamily="@font/gilroy_medium"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirm"
+            android:layout_gravity="center"
+            android:layout_width="197dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_btn"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="Confirm"
+            android:layout_marginTop="30dp"
+            android:textAllCaps="false"
+            android:textColor="@color/title_white"
+            android:textSize="18dp" />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

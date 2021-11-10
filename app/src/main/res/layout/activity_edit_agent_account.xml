@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dim_white"
+    tools:context=".AgentHomeScreen.EditAgentAccount">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeAgentAccount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:text="Personal Information"
+                        android:textColor="@color/black_alt"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/username"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="none"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/full_name"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/full_name"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/email"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/contact_num"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/contact_num"
+                        android:inputType="phone"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/barangay"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentBarangay"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/barangay"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/landmark_sitio_purok"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentLandmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/landmark_sitio_purok"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/street_if_applicable"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/txtEditAgentStreet"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:ems="10"
+                        android:hint="@string/street_if_applicable"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/black_alt"
+                        android:textColorHint="@color/gray"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/change_pass"
+                        android:textColor="@color/black_alt"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnChange"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/dialog_bg"
+                        android:paddingStart="15dp"
+                        android:text="**********"
+                        android:textAlignment="viewStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black_alt"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="50dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnUpdateAgentAcc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_btn"
+                            android:fontFamily="@font/gilroy_bold"
+                            android:text="@string/update"
+                            android:textAllCaps="false"
+                            android:textColor="@color/title_white"
+                            android:textSize="15sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnClearFieldsAgent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="40dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_btn"
+                            android:backgroundTint="@color/red"
+                            android:fontFamily="@font/gilroy_bold"
+                            android:text="@string/clear"
+                            android:textAllCaps="false"
+                            android:textColor="@color/title_white"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/topbar_bg"
+        android:backgroundTint="@color/green_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editAgentbtnBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arrow_92_256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="Edit Profile"
+        android:textAlignment="center"
+        android:textColor="@color/title_white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/editAgentbtnBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_green">#3DCC8E</color>
+    <color name="status_green">#1AC09D</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="green_admin">#03B898</color>
+    <color name="black">#4A4A4A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dim_white">#EAEAEA</color>
+    <color name="title_white">#FFFFFF</color>
+    <color name="topbar_white">#FFFFFF</color>
+    <color name="topbar_green">#3DCC8E</color>
+    <color name="gray">#959595</color>
+    <color name="light_gray">#D5D5D5</color>
+    <color name="login">#1ac09d</color>
+    <color name="black_alt">#4A4A4A</color>
+    <color name="lemon_green">#6ce48e</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="edit_text_bg">#FFFFFF</color>
+    <color name="black_transparent">#4B000000</color>
+    <color name="red">#FF5050</color>
+    <drawable name="circle_bg">@drawable/background_gradient_circle</drawable>
+</resources>

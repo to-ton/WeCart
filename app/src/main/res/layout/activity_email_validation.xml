@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginSignUpScreen.EmailValidation">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mwhCloseColor="@color/main_green"
+        app:mwhStartColor="@color/green_admin"
+        app:mwhWaveHeight="60dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waveHeader"
+        app:layout_constraintVertical_bias="0.335"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/weCart"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/wecart_logo_no_text" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:gravity="center"
+            android:text="Verify your email"
+            android:textColor="@color/main_green"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/enter_code"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:gravity="center"
+            android:text="Resend Code"
+            android:textColor="@color/main_green"
+            android:textSize="15sp" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/loadingVerify"
+            style="@style/SpinKitView.Large.WanderingCubes"
+            android:layout_width="59dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            app:SpinKit_Color="@color/main_green"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

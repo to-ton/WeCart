@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seller_home_screen"
+    app:startDestination="@id/fragmentSellerOrders">
+
+    <fragment
+        android:id="@+id/fragmentSellerOrders"
+        android:name="com.lobomarket.wecart.SellerHomeScreen.fragmentSellerOrders"
+        android:label="fragment_seller_orders"
+        tools:layout="@layout/fragment_seller_orders" >
+        <action
+            android:id="@+id/action_fragmentSellerOrders_to_fragmentSellerProducts"
+            app:destination="@id/fragmentSellerProducts" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSellerProducts"
+        android:name="com.lobomarket.wecart.SellerHomeScreen.fragmentSellerProducts"
+        android:label="fragment_seller_products"
+        tools:layout="@layout/fragment_seller_products" >
+        <action
+            android:id="@+id/action_fragmentSellerProducts_to_fragmentSellerOrders"
+            app:destination="@id/fragmentSellerOrders"
+            app:popUpTo="@id/fragmentSellerOrders"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
