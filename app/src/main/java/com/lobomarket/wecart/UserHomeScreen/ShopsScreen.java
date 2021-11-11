@@ -355,7 +355,7 @@ public class ShopsScreen extends AppCompatActivity implements ProductsCustomAdap
     private void showAllProducts() {
         try {
             String tx = URLEncoder.encode(sellerUsername.replace("'","\\'"), "utf-8");
-
+            swipeRefreshLayout.setRefreshing(true);
             String JSON_URL = "https://wecart.gq/wecart-api/showproducts.php?seller="+ tx +"";
             product.clear();
             RequestQueue requestQueue = Volley.newRequestQueue(ShopsScreen.this);
@@ -418,7 +418,6 @@ public class ShopsScreen extends AppCompatActivity implements ProductsCustomAdap
             swipeRefreshLayout.setRefreshing(true);
             String txtseller = URLEncoder.encode(sellerName.replace("'","\\'"), "utf-8");
             String txtproducttype = URLEncoder.encode(productType.replace("'","\\'"), "utf-8");
-
             String JSON_URL = "https://wecart.gq/wecart-api/showproducts.php?seller="+ txtseller +"&product_type="+ txtproducttype +"";
             product.clear();
             RequestQueue requestQueue = Volley.newRequestQueue(ShopsScreen.this);
@@ -429,6 +428,7 @@ public class ShopsScreen extends AppCompatActivity implements ProductsCustomAdap
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
+                            noProductsAvailabale.setVisibility(View.GONE);
                             noProduct.setVisibility(View.GONE);
                             for (int i = 0; i < response.length(); i++){
                                 try {
