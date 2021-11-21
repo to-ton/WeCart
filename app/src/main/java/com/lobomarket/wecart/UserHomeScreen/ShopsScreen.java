@@ -140,7 +140,7 @@ public class ShopsScreen extends AppCompatActivity implements ProductsCustomAdap
             recyclerView = findViewById(R.id.shopList);
             product = new ArrayList<>();
 
-            layoutManager = new GridLayoutManager(ShopsScreen.this, 3, GridLayoutManager.VERTICAL, false);
+            layoutManager = new GridLayoutManager(ShopsScreen.this, 2, GridLayoutManager.VERTICAL, false);
             cAdapter = new ProductsCustomAdapter(ShopsScreen.this, product);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(cAdapter);

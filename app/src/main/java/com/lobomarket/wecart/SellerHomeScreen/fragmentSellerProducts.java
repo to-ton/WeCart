@@ -87,7 +87,7 @@ public class fragmentSellerProducts extends Fragment implements SellerProductsCu
             account = view.findViewById(R.id.btnSellerAccountDetails);
             noResult = view.findViewById(R.id.noProductsAvailableSeller);
 
-            layoutManager = new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false);
+            layoutManager = new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false);
             cAdapter = new SellerProductsCustomAdapter(getActivity(), product);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(cAdapter);
