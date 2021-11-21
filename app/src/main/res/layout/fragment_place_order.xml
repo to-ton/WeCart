@@ -42,7 +42,6 @@
             android:layout_height="25dp"
             android:layout_marginStart="20dp"
             android:background="@drawable/arrow_92_256"
-            android:onClick="btnPrevious"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -73,13 +73,16 @@ public class  fragmentTransaction extends Fragment {
     LoadingDialog loadingDialog;
 
 
-    String buyer, overAllPrice, txtAddress, txtAgent, txtMop;
-    int OrderSummaryCount, ProductBreakdown;
+    String buyer, overAllPrice, txtAddress, txtAgent, txtMop, txtMopFromAgent;
+    int counter;
+
+    Button btnTransactToAgent;
 
     //Constraint layout variables
     ConstraintLayout checkoutLoading, checkoutNoInternet;
 
     LinearLayout shippingCostLayout;
+    NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,11 +95,16 @@ public class  fragmentTransaction extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         try {
+            counter = 0;
+            navController = Navigation.findNavController(view);
+
             //Constraint layout declaration
             checkoutLoading = view.findViewById(R.id.loadingScreenCheckout);
             checkoutNoInternet = view.findViewById(R.id.noInternetCheckout);
 
             shippingCostLayout = view.findViewById(R.id.shippingCostLayout);
+
+            btnTransactToAgent = view.findViewById(R.id.btnTransactToAgent);
 
             swipeRefreshLayout = view.findViewById(R.id.orderRefresh);
             recyclerView = view.findViewById(R.id.order_summary_card_lis);
@@ -112,7 +120,7 @@ public class  fragmentTransaction extends Fragment {
             loadingDialog = new LoadingDialog(getActivity());
             txtMop = "null";
 
-            buyer = getArguments().getString("buyer");
+            buyer = getArguments().getString("buyerName");
             //txtAgent= getArguments().getString("agent");
 
             shippingCost = view.findViewById(R.id.shippingCost);
@@ -126,7 +134,24 @@ public class  fragmentTransaction extends Fragment {
 
             refreshList();
 
+            txtMopFromAgent = getArguments().getString("payment");
 
+            if(!(txtMopFromAgent == null)){
+                txtMop = txtMopFromAgent;
+                payment.setText("Cash on Delivery");
+                //setMOP();
+                showNewOrderTotal();
+            }
+
+            btnTransactToAgent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    counter = 1;
+                    txtMop = "pickup";
+                    setMOP();
+                    getActivity().onBackPressed();
+                }
+            });
 
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -158,6 +183,11 @@ public class  fragmentTransaction extends Fragment {
                             //setMOP();
                             showNewOrderTotal();
                             dialog.dismiss();
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("buyerName", buyer);
+                            bundle.putString("payment", txtMop);
+                            navController.navigate(R.id.action_fragmentTransaction_to_fragmentAgentSelector, bundle);
                         }
                     });
 
@@ -168,6 +198,8 @@ public class  fragmentTransaction extends Fragment {
                             txtMop = "pickup";
                             setMOP();
                             dialog.dismiss();
+                            number.setVisibility(View.GONE);
+                            agent.setText(R.string.no_agent);
                         }
                     });
 
@@ -283,7 +315,9 @@ public class  fragmentTransaction extends Fragment {
                     new Response.Listener<JSONArray>() {
                         @Override
                         public void onResponse(JSONArray response) {
-                            Toast.makeText(getActivity(), "Mode of Payment:" + txtMop, Toast.LENGTH_SHORT).show();
+                            if (counter == 0) {
+                                Toast.makeText(getActivity(), "Mode of Payment:" + txtMop, Toast.LENGTH_SHORT).show();
+                            }
                             JSONObject userObject2 = null;
                             try {
                                 userObject2 = response.getJSONObject(0);
@@ -427,13 +461,25 @@ public class  fragmentTransaction extends Fragment {
                             }
 
                             JSONObject userObject2 = null;
+                            JSONObject userObject3 = null;
                             try {
                                 userObject2 = response.getJSONObject(0);
+                                userObject3 = response.getJSONObject(1);
+                                String newPrice = userObject3.getString("Final_Total_with_shipping");
                                 overAllPrice = userObject2.getString("Final_Total");
 
                                 double price = Double.parseDouble(overAllPrice);
+                                double price2 = Double.parseDouble(newPrice);
+
                                 DecimalFormat formatter = new DecimalFormat("#,###.00");
-                                finalTotalOrderSummary.setText("₱" + formatter.format(price));
+
+                                if(!(txtMopFromAgent == null)){
+                                    finalTotalOrderSummary.setText("₱" + formatter.format(price2));
+                                } else {
+                                    finalTotalOrderSummary.setText("₱" + formatter.format(price));
+                                }
+
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

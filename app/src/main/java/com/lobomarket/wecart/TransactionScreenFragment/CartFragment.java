@@ -139,7 +139,7 @@ public class CartFragment extends Fragment implements ViewCartCustomAdapter.MyCa
                     } else {
                         Bundle bundle = new Bundle();
                         bundle.putString("buyerName", userAccountName);
-                        navController.navigate(R.id.action_cartFragment_to_fragmentAgentSelector, bundle);
+                        navController.navigate(R.id.action_cartFragment_to_fragmentTransaction2, bundle);
                     }
                 }
             });

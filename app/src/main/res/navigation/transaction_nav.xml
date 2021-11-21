@@ -13,15 +13,12 @@
         <action
             android:id="@+id/action_fragmentAgentSelector_to_fragmentTransaction"
             app:destination="@id/fragmentTransaction"
-            app:enterAnim="@anim/slide_right_to_left"
+            app:enterAnim="@anim/slide_left_to_right"
             app:exitAnim="@anim/wait_anim"
-            app:popEnterAnim="@anim/wait_anim"
-            app:popExitAnim="@anim/slide_r2l_reverse" />
-        <action
-            android:id="@+id/action_fragmentAgentSelector_to_cartFragment"
-            app:destination="@id/cartFragment"
             app:launchSingleTop="true"
-            app:popUpTo="@id/cartFragment"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_l2r_reverse"
+            app:popUpTo="@id/fragmentTransaction"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -32,11 +29,14 @@
         <action
             android:id="@+id/action_fragmentTransaction_to_fragmentAgentSelector"
             app:destination="@id/fragmentAgentSelector"
-            app:enterAnim="@anim/slide_left_to_right"
+            app:enterAnim="@anim/slide_right_to_left"
             app:exitAnim="@anim/wait_anim"
-            app:launchSingleTop="true"
             app:popEnterAnim="@anim/wait_anim"
-            app:popExitAnim="@anim/slide_l2r_reverse"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentTransaction_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:launchSingleTop="true"
             app:popUpTo="@id/cartFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -46,8 +46,8 @@
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_cartFragment_to_fragmentAgentSelector"
-            app:destination="@id/fragmentAgentSelector"
+            android:id="@+id/action_cartFragment_to_fragmentTransaction2"
+            app:destination="@id/fragmentTransaction"
             app:enterAnim="@anim/slide_right_to_left"
             app:exitAnim="@anim/wait_anim"
             app:popEnterAnim="@anim/wait_anim"

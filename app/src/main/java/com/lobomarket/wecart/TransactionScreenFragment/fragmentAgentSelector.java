@@ -60,7 +60,7 @@ public class fragmentAgentSelector extends Fragment implements AgentSelectionCus
     private int dataCount;
     private Button selectAgent, back;
 
-    String agentUsername, buyerUsername;
+    String agentUsername, buyerUsername, txtMop;
     LoadingDialog loadingDialog;
 
     ConstraintLayout noAgent, noInternet, loadingAgent;
@@ -77,6 +77,9 @@ public class fragmentAgentSelector extends Fragment implements AgentSelectionCus
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         try {
+            buyerUsername = getArguments().getString("buyerName");
+            txtMop = getArguments().getString("payment");
+
             swipeRefreshLayout = view.findViewById(R.id.agentRefresh);
             recyclerView = view.findViewById(R.id.agentSelectionList);
             agent = new ArrayList<>();
@@ -151,8 +154,9 @@ public class fragmentAgentSelector extends Fragment implements AgentSelectionCus
                             }
                             NavController navController = Navigation.findNavController(view);
                             Bundle bundle = new Bundle();
-                            bundle.putString("buyer", buyerUsername);
+                            bundle.putString("buyerName", buyerUsername);
                             bundle.putString("agent", agentUsername);
+                            bundle.putString("payment", txtMop);
                             navController.navigate(R.id.action_fragmentAgentSelector_to_fragmentTransaction, bundle);
                             if(!(agentUsername.equals("No available agents at the moment"))){
                                 Toast.makeText(getActivity(), "You have selected, " + agentUsername + " as your agent, " + buyerUsername, Toast.LENGTH_SHORT).show();
@@ -314,7 +318,7 @@ public class fragmentAgentSelector extends Fragment implements AgentSelectionCus
     @Override
     public void onResume() {
         super.onResume();
-        buyerUsername = getArguments().getString("buyerName");
+
 
         refreshList();
     }
