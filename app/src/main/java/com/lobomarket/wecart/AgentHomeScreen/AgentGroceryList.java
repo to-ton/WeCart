@@ -305,11 +305,13 @@ public class AgentGroceryList extends AppCompatActivity{
                                 hm.put(a, (b == null) ? 1 : b + 1);
                             }
                             try{
-                                statusCount = hm.get("Out For Delivery.");
+                                statusCount = hm.get("Out For Delivery \ud83d\ude9a");
 
                             } catch (Exception e){
                                 statusCount = 0;
                             }
+
+
 
                             if(statusCount == response.length()){
                                 btnDelivered.setEnabled(true);

@@ -310,6 +310,7 @@ public class EditDeleteProducts extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     Log.v("TEST", "failed");
                     Toast.makeText(EditDeleteProducts.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                    dialog.stopLoading();
                 }
             }
             );
