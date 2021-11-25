@@ -15,16 +15,16 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDetailsToHome"
-            android:onClick="detailsToHome"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/arrow_92_green"
+            android:onClick="detailsToHome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.018"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -61,6 +61,22 @@
                         app:zoomage_restrictBounds="true"
                         app:zoomage_translatable="true"
                         app:zoomage_zoomable="true" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/soldout"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_btn_sold_out"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:text="Sold Out"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/productPhoto"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

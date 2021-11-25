@@ -44,7 +44,7 @@ public class ProductDetails extends AppCompatActivity {
     String pName, description, price, imageURL, seller, buyer, stock;
     TextView name, tPrice, desc, qText, totalAmount;
     ImageView photo;
-    Button minus, add, addToCart;
+    Button minus, add, addToCart, soldout;
 
     CoordinatorLayout coordinatorLayout;
 
@@ -101,6 +101,13 @@ public class ProductDetails extends AppCompatActivity {
             add = findViewById(R.id.btnPlus);
             addToCart = findViewById(R.id.btnAddToCart);
             coordinatorLayout = findViewById(R.id.coordinatorLayout);
+            soldout = findViewById(R.id.soldout);
+
+            if(stockInt < 1){
+                soldout.setVisibility(View.VISIBLE);
+            } else {
+                soldout.setVisibility(View.GONE);
+            }
 
             Picasso.get().load(imageURL).into(photo);
             name.setText(pName);
