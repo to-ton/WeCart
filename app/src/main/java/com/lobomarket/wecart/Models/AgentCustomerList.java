@@ -12,6 +12,8 @@ public class AgentCustomerList {
     private String finalTotal;
     private String agent;
     private String trackingId;
+    private String addfee;
+    private String devfee;
 
     public AgentCustomerList() {
     }
@@ -102,5 +104,21 @@ public class AgentCustomerList {
 
     public void setTrackingId(String trackingId) {
         this.trackingId = trackingId;
+    }
+
+    public String getAddfee() {
+        return addfee;
+    }
+
+    public void setAddfee(String addfee) {
+        this.addfee = addfee;
+    }
+
+    public String getDevfee() {
+        return devfee;
+    }
+
+    public void setDevfee(String devfee) {
+        this.devfee = devfee;
     }
 }

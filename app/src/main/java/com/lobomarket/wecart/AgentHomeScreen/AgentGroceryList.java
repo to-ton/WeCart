@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +59,7 @@ public class AgentGroceryList extends AppCompatActivity{
     String qrKey;
 
     String statusTxt, customerUsername, fullName, contactNum, address, mop, storeNameTxt, sellerUsername, finalTotal, agentUsername, trackingID;
-    TextView status, buyerName, buyerDetails, storeName, totalOrder;
+    TextView status, buyerName, buyerDetails, storeName, totalOrder, subtotal, shippingCost, additionalFee;
     Button btnDelivered, back, scan;
 
     RequestQueue requestQueue;
@@ -67,6 +68,8 @@ public class AgentGroceryList extends AppCompatActivity{
 
     SwipeRefreshLayout swipeRefreshLayout;
 
+    LinearLayout subTotalLayout, shippingCostLayout, additionalFeeLayout;
+
     int dataCount;
 
     @Override
@@ -74,6 +77,15 @@ public class AgentGroceryList extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agent_grocery_list);
         try{
+            shippingCostLayout = findViewById(R.id.shippingCostLayout);
+            subTotalLayout = findViewById(R.id.subTotalLayout);
+            additionalFeeLayout = findViewById(R.id.additionalFeeLayout);
+
+            shippingCost = findViewById(R.id.shippingCost_agent);
+            subtotal = findViewById(R.id.subTotal_agent);
+            additionalFee = findViewById(R.id.additionalFee_agent);
+
+
             loadingDialog = new LoadingDialog(AgentGroceryList.this);
             buyerName = findViewById(R.id.buyerName);
             buyerDetails = findViewById(R.id.buyerDetails);
@@ -101,13 +113,19 @@ public class AgentGroceryList extends AppCompatActivity{
             finalTotal = intent.getStringExtra("Final_Total");
             agentUsername = intent.getStringExtra("agent");
             trackingID = intent.getStringExtra("tracking_id");
+            String deliveryFee = intent.getStringExtra("devfee");
+            String addFee = intent.getStringExtra("addfee");
 
             //status.setText(statusTxt);
             buyerName.setText(fullName);
             buyerDetails.setText(contactNum + "\n" + address);
             double total = Double.parseDouble(finalTotal);
+            double devFee = Double.parseDouble(deliveryFee);
+            double addfee = Double.parseDouble(addFee);
             DecimalFormat formatter = new DecimalFormat("#,###.00");
             totalOrder.setText("₱" + formatter.format(total));
+            shippingCost.setText("₱" + formatter.format(devFee));
+            additionalFee.setText("₱" + formatter.format(addfee));
 
             layoutManager = new GridLayoutManager(AgentGroceryList.this, 1, GridLayoutManager.VERTICAL, false);
             cAdapter = new OrderBreakDownAgentCustomAdapter(AgentGroceryList.this, breakdowns);

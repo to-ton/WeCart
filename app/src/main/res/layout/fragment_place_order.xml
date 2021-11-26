@@ -178,12 +178,46 @@
                                     android:background="@drawable/line" />
 
                                 <LinearLayout
-                                    android:id="@+id/shippingCostLayout"
+                                    android:id="@+id/subTotalLayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/imageView14"
                                     android:layout_marginStart="15dp"
                                     android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/txtSubtotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="30dp"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="Sub Total"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:id="@+id/subTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="@string/shipping_cost"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/shippingCostLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/subTotalLayout"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="5dp"
                                     android:layout_marginEnd="15dp"
                                     android:layout_marginBottom="5dp"
                                     android:orientation="horizontal"
@@ -212,10 +246,44 @@
                                 </LinearLayout>
 
                                 <LinearLayout
-                                    android:layout_marginTop="15dp"
+                                    android:id="@+id/additionalFeeLayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/shippingCostLayout"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/txtAditional"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="30dp"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="Additional Fee"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:id="@+id/additionalFee"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="@string/shipping_cost"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_marginTop="15dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/additionalFeeLayout"
                                     android:layout_marginStart="15dp"
                                     android:layout_marginEnd="15dp"
                                     android:layout_marginBottom="15dp"

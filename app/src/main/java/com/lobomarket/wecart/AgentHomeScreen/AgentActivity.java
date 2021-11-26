@@ -181,6 +181,8 @@ public class AgentActivity extends AppCompatActivity implements AgentOrderListCu
                                     u.setFinalTotal(userObject.getString("Final_Total"));
                                     u.setAgent(userObject.getString("agent"));
                                     u.setTrackingId(userObject.getString("tracking_id"));
+                                    u.setDevfee(userObject.getString("delivery_fee"));
+                                    u.setAddfee(userObject.getString("add_fee"));
 
                                     orders.add(u);
 
@@ -231,6 +233,9 @@ public class AgentActivity extends AppCompatActivity implements AgentOrderListCu
             intent.putExtra("Final_Total", itemClicked.getFinalTotal());
             intent.putExtra("agent", itemClicked.getAgent());
             intent.putExtra("tracking_id", itemClicked.getTrackingId());
+            intent.putExtra("devfee", itemClicked.getDevfee());
+            intent.putExtra("addfee", itemClicked.getAddfee());
+
             startActivity(intent);
         } catch (Exception e) {
             Log.e("Agent Activity", "exception", e);

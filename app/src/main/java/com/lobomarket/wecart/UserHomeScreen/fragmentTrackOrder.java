@@ -170,6 +170,8 @@ public class fragmentTrackOrder extends Fragment implements TrackOrderListCustom
                                     u.setTrackingId(userObject.getString("tracking_id"));
                                     u.setDeliveryStatus(userObject.getString("delivery_status"));
                                     u.setFinalTotal(userObject.getString("final_total"));
+                                    u.setDelivery_fee(userObject.getString("delivery_fee"));
+                                    u.setAdd_fee(userObject.getString("add_fee"));
 
                                     orders.add(u);
 
@@ -224,6 +226,8 @@ public class fragmentTrackOrder extends Fragment implements TrackOrderListCustom
                 intent.putExtra("buyerusername", username);
                 intent.putExtra("status", clickedItem.getDeliveryStatus());
                 intent.putExtra("finalTotal", clickedItem.getFinalTotal());
+                intent.putExtra("devfee", clickedItem.getDelivery_fee());
+                intent.putExtra("addfee", clickedItem.getAdd_fee());
 
                 startActivity(intent);
             } catch (IndexOutOfBoundsException e){

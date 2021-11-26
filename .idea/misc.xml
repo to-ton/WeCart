@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/drawable/bg_btn.xml" value="0.2203125" />
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/drawable/bg_btn_sold_out.xml" value="0.2203125" />
+        <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layout/activity_agent_grocery_list.xml" value="0.5" />
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layout/activity_product_details.xml" value="0.33" />
-        <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layout/fragment_place_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layout/activity_track_order_list.xml" value="0.33" />
+        <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layout/fragment_place_order.xml" value="0.21" />
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart Jarvis Edition/app/src/main/res/layouts/home_screen/layout/fragment_home_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart/app/src/main/res/drawable/bg_btn.xml" value="0.18552631578947368" />
         <entry key="..\:/Users/asus/AndroidStudioProjects/WeCart/app/src/main/res/drawable/bg_btn_diable.xml" value="0.18552631578947368" />

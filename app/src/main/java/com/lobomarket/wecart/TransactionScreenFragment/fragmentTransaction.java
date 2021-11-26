@@ -67,7 +67,7 @@ public class  fragmentTransaction extends Fragment {
     List<OrderBreakdown> breakdowns;
     private int dataCount;
     private SwipeRefreshLayout swipeRefreshLayout;
-    TextView finalTotalOrderSummary, address, agent, payment, number, shippingCost, txtShipping;
+    TextView finalTotalOrderSummary, address, agent, payment, number, shippingCost, txtShipping, txtSubtotal, txtAdditionalFee;
     CardView modeOfpayment;
     Button btnPayOrder;
     LoadingDialog loadingDialog;
@@ -81,7 +81,7 @@ public class  fragmentTransaction extends Fragment {
     //Constraint layout variables
     ConstraintLayout checkoutLoading, checkoutNoInternet;
 
-    LinearLayout shippingCostLayout;
+    LinearLayout shippingCostLayout, subTotalLayout, additionalFeeLayout;
     NavController navController;
 
     @Override
@@ -103,6 +103,8 @@ public class  fragmentTransaction extends Fragment {
             checkoutNoInternet = view.findViewById(R.id.noInternetCheckout);
 
             shippingCostLayout = view.findViewById(R.id.shippingCostLayout);
+            subTotalLayout = view.findViewById(R.id.subTotalLayout);
+            additionalFeeLayout = view.findViewById(R.id.additionalFeeLayout);
 
             btnTransactToAgent = view.findViewById(R.id.btnTransactToAgent);
 
@@ -117,6 +119,8 @@ public class  fragmentTransaction extends Fragment {
             number = view.findViewById(R.id.agentContactDetails);
             modeOfpayment = view.findViewById(R.id.payment_card_view);
             btnPayOrder = view.findViewById(R.id.btnPayOrder);
+            txtSubtotal = view.findViewById(R.id.subTotal);
+            txtAdditionalFee = view.findViewById(R.id.additionalFee);
             loadingDialog = new LoadingDialog(getActivity());
             txtMop = "null";
 
@@ -330,6 +334,9 @@ public class  fragmentTransaction extends Fragment {
                                 e.printStackTrace();
                             }
                             shippingCostLayout.setVisibility(View.GONE);
+                            subTotalLayout.setVisibility(View.GONE);
+                            additionalFeeLayout.setVisibility(View.GONE);
+
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -465,8 +472,9 @@ public class  fragmentTransaction extends Fragment {
                             try {
                                 userObject2 = response.getJSONObject(0);
                                 userObject3 = response.getJSONObject(1);
-                                String newPrice = userObject3.getString("Final_Total_with_shipping");
                                 overAllPrice = userObject2.getString("Final_Total");
+                                String newPrice = userObject3.getString("Final_Total_with_shipping");
+
 
                                 double price = Double.parseDouble(overAllPrice);
                                 double price2 = Double.parseDouble(newPrice);
@@ -475,6 +483,7 @@ public class  fragmentTransaction extends Fragment {
 
                                 if(!(txtMopFromAgent == null)){
                                     finalTotalOrderSummary.setText("₱" + formatter.format(price2));
+                                    showNewOrderTotal();
                                 } else {
                                     finalTotalOrderSummary.setText("₱" + formatter.format(price));
                                 }
@@ -563,8 +572,8 @@ public class  fragmentTransaction extends Fragment {
 
     }
 
-
     public void showNewOrderTotal(){
+        //Toast.makeText(getActivity(), "Mop: " + txtMop, Toast.LENGTH_SHORT).show();
         try {
             String txtbuyer = null;
             String mTxtmop = null;
@@ -585,14 +594,35 @@ public class  fragmentTransaction extends Fragment {
                         @Override
                         public void onResponse(JSONArray response) {
                             JSONObject userObject5 = null;
-                            try {
-                                userObject5 = response.getJSONObject(1);
-                                overAllPrice = userObject5.getString("Final_Total_with_shipping");
+                            JSONObject userObject6 = null;
+                            JSONObject userObject7 = null;
+                            JSONObject userObject8 = null;
 
-                                double price = Double.parseDouble(overAllPrice);
+                            try {
+                                userObject6 = response.getJSONObject(0); //sub total
+                                userObject7 = response.getJSONObject(1); //delivery fee
+                                userObject8 = response.getJSONObject(2); //additional fee
+                                userObject5 = response.getJSONObject(3); //final total shipping
+
+                                overAllPrice = userObject5.getString("Final_Total_with_shipping");
+                                String subtotaltxt = userObject6.getString("Final_Total");
+                                String deliveryFee = userObject7.getString("delivery_fee");
+                                String addFee = userObject8.getString("add_fee");
+
+                                double subtotal_double = Double.parseDouble(subtotaltxt);
+                                double devFee = Double.parseDouble(deliveryFee);
+                                double addfee = Double.parseDouble(addFee);
+                                double finalTotal = Double.parseDouble(overAllPrice);
+
                                 DecimalFormat formatter = new DecimalFormat("#,###.00");
                                 shippingCostLayout.setVisibility(View.VISIBLE);
-                                finalTotalOrderSummary.setText("₱" + formatter.format(price));
+                                additionalFeeLayout.setVisibility(View.VISIBLE);
+                                subTotalLayout.setVisibility(View.VISIBLE);
+
+                                txtSubtotal.setText("₱" + formatter.format(subtotal_double));
+                                shippingCost.setText("₱" + formatter.format(devFee));
+                                txtAdditionalFee.setText("₱" + formatter.format(addfee));
+                                finalTotalOrderSummary.setText("₱" + formatter.format(finalTotal));
                                 Toast.makeText(getActivity(), "Mode of Payment:" + txtMop, Toast.LENGTH_SHORT).show();
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -612,4 +642,6 @@ public class  fragmentTransaction extends Fragment {
 
         }
     }
+
+
 }

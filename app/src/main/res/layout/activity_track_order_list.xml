@@ -181,12 +181,13 @@
                             android:text="@string/order_summary" />
 
                         <androidx.cardview.widget.CardView
-                            android:layout_marginStart="20dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginTop="15dp"
-                            app:cardCornerRadius="15dp"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" >
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardCornerRadius="15dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -201,28 +202,6 @@
                                     android:src="@drawable/shop_icon"
                                     app:tint="@color/black_alt" />
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="15dp"
-                                    android:layout_toRightOf="@id/shopImage"
-                                    android:fontFamily="@font/gilroy_bold"
-                                    android:text="@string/product_breakdown"
-                                    android:textColor="@color/black_alt"
-                                    android:textSize="20sp" />
-
-                                <androidx.recyclerview.widget.RecyclerView
-                                    android:id="@+id/order_list_track"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@id/shopImage"
-                                    android:layout_marginBottom="10dp"
-                                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent">
-                                </androidx.recyclerview.widget.RecyclerView>
-
                                 <ImageView
                                     android:id="@+id/imageView14"
                                     android:layout_width="match_parent"
@@ -231,13 +210,82 @@
                                     android:background="@drawable/line" />
 
                                 <LinearLayout
-                                    android:layout_below="@id/imageView14"
-                                    android:layout_marginStart="15dp"
-                                    android:layout_marginEnd="15dp"
-                                    android:layout_marginBottom="15dp"
+                                    android:id="@+id/shippingCostLayout"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_below="@id/imageView14"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/txtShippingCost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="30dp"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="Shipping Cost"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:id="@+id/shippingCost_track"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="@string/shipping_cost"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/additionalFeeLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/shippingCostLayout"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/txtAditional"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="30dp"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="Additional Fee"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+
+                                    <TextView
+                                        android:id="@+id/additionalFee_tack"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:text="@string/shipping_cost"
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/black_alt"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/additionalFeeLayout"
+                                    android:layout_marginStart="15dp"
                                     android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginBottom="15dp"
                                     android:orientation="horizontal">
 
                                     <TextView
@@ -261,6 +309,27 @@
                                         android:textColor="@color/black_alt"
                                         android:textSize="20dp" />
                                 </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_toRightOf="@id/shopImage"
+                                    android:fontFamily="@font/gilroy_bold"
+                                    android:text="@string/product_breakdown"
+                                    android:textColor="@color/black_alt"
+                                    android:textSize="20sp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/order_list_track"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/shopImage"
+                                    android:layout_marginBottom="10dp"
+                                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"></androidx.recyclerview.widget.RecyclerView>
                             </RelativeLayout>
 
                         </androidx.cardview.widget.CardView>

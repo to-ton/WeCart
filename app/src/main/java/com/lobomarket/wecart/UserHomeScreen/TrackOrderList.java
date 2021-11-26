@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,16 +60,25 @@ public class TrackOrderList extends AppCompatActivity implements OrderBreakDownA
     RequestQueue requestQueue;
     String agentUsername;
     LoadingDialog loadingDialog;
-    TextView finalAmount, mop;
+    TextView finalAmount, mop, subtotal, shippingCost, additionalFee;
     SwipeRefreshLayout swipeRefreshLayout;
 
     String userName, trackingID, txtAgent, finalAmountPrice, qrKey;
+
+    LinearLayout subTotalLayout, shippingCostLayout, additionalFeeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_order_list);
         try {
+
+            shippingCostLayout = findViewById(R.id.shippingCostLayout);
+            additionalFeeLayout = findViewById(R.id.additionalFeeLayout);
+
+            shippingCost = findViewById(R.id.shippingCost_track);
+            additionalFee = findViewById(R.id.additionalFee_tack);
+
             swipeRefreshLayout = findViewById(R.id.order_track_Refresh);
             finalAmount = findViewById(R.id.finalTotalOrderSummary_track);
             loadingDialog = new LoadingDialog(TrackOrderList.this);
@@ -84,6 +94,8 @@ public class TrackOrderList extends AppCompatActivity implements OrderBreakDownA
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(cAdapter);
 
+            checkInternet();
+
             back = findViewById(R.id.btnTrackOrderToHome);
             btnScan = findViewById(R.id.btnScanBuyer);
 
@@ -94,10 +106,23 @@ public class TrackOrderList extends AppCompatActivity implements OrderBreakDownA
 
             double total = Double.parseDouble(finalAmountPrice);
             DecimalFormat formatter = new DecimalFormat("#,###.00");
+
+
+
+            String deliveryFee = intent.getStringExtra("devfee");
+            String addFee = intent.getStringExtra("addfee");
+
+            if(!(deliveryFee.equals("0.00"))){
+                double devFee = Double.parseDouble(deliveryFee);
+                double addfee = Double.parseDouble(addFee);
+                shippingCostLayout.setVisibility(View.VISIBLE);
+                additionalFeeLayout.setVisibility(View.VISIBLE);
+                shippingCost.setText("₱" + formatter.format(devFee));
+                additionalFee.setText("₱" + formatter.format(addfee));
+            }
+
+
             finalAmount.setText("₱" + formatter.format(total));
-
-
-            checkInternet();
 
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                 @Override
@@ -219,6 +244,10 @@ public class TrackOrderList extends AppCompatActivity implements OrderBreakDownA
                                     if (jsonObject.getString("mode_of_payment").equals("cod")){
                                         btnScan.setVisibility(View.GONE);
                                         mop.setText("Cash on Delivery");
+
+
+
+
                                     } else {
                                         btnScan.setVisibility(View.VISIBLE);
                                         mop.setText("Pick up");
