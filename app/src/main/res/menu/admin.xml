@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/fragmentDashboard"
+            android:icon="@drawable/ic_baseline_admin_panel_settings_24"
+            android:title="@string/dashboard" />
+
+        <item
+            android:id="@+id/fragmentAddSellers"
+            android:icon="@drawable/ic_baseline_person_add"
+            android:title="@string/add_seller" />
+
+        <item
+            android:id="@+id/fragmentsActiveAgents"
+            android:icon="@drawable/ic_baseline_person_add"
+            android:title="@string/agents" />
+
+        <item
+            android:id="@+id/fragmentSalesReport"
+            android:icon="@drawable/sales_report_icon"
+            android:title="@string/sales_report" />
+
+        <item
+            android:id="@+id/adminLogout"
+            android:icon="@drawable/ic_baseline_logout_24"
+            android:title="@string/logout" />
+    </group>
+</menu>

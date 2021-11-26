@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/fragmentDashboard2">
+
+    <fragment
+        android:id="@+id/fragmentDashboard2"
+        android:name="com.lobomarket.wecart.AdminHomeScreen.fragmentDashboard"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_fragmentDashboard2_to_fragmentAddSellers2"
+            app:destination="@id/fragmentAddSellers2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentDashboard2_to_fragmentsActiveAgents"
+            app:destination="@id/fragmentsActiveAgents"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse"/>
+        <action
+            android:id="@+id/action_fragmentDashboard2_to_fragmentsSellerSalesReport"
+            app:destination="@id/fragmentsSellerSalesReport"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddSellers2"
+        android:name="com.lobomarket.wecart.AdminHomeScreen.fragmentSellers"
+        android:label="fragment_add_sellers"
+        tools:layout="@layout/fragment_active_sellers" >
+        <action
+            android:id="@+id/action_fragmentAddSellers2_to_fragmentDashboard2"
+            app:destination="@id/fragmentDashboard2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragmentDashboard2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentsActiveAgents"
+        android:name="com.lobomarket.wecart.AdminHomeScreen.fragmentsActiveAgents"
+        android:label="fragment_fragments_active_agents"
+        tools:layout="@layout/fragment_fragments_active_agents" >
+        <action
+            android:id="@+id/action_fragmentsActiveAgents_to_fragmentDashboard2"
+            app:destination="@id/fragmentDashboard2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragmentDashboard2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentsSellerSalesReport"
+        android:name="com.lobomarket.wecart.AdminHomeScreen.fragmentsSellerSalesReport"
+        android:label="fragment_seller_sales_report"
+        tools:layout="@layout/fragment_seller_sales_report">
+
+        <action
+            android:id="@+id/action_fragmentsSellerSalesReport_to_fragmentDashboard2"
+            app:destination="@id/fragmentDashboard2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragmentDashboard2"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_activity_navigation"
+    app:startDestination="@id/fragmentHomeScreen">
+
+    <fragment
+        android:id="@+id/fragmentHomeScreen"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentHomeScreen"
+        android:label="fragmentHomeScreen"
+        tools:layout="@layout/fragment_home_screen">
+        <action
+            android:id="@+id/action_fragmentHomeScreen_to_fragmentAccount"
+            app:destination="@id/fragmentAccount"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentHomeScreen_to_fragmentCustomerCare"
+            app:destination="@id/fragmentCustomerCare"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentHomeScreen_to_fragmentTrackOrder"
+            app:destination="@id/fragmentTrackOrder"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentHomeScreen_to_fragmentSearch"
+            app:destination="@id/fragmentSearch"
+            app:enterAnim="@anim/slide_right_to_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentHomeScreen_to_fragmentAppTheme"
+            app:destination="@id/fragmentAppTheme" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAccount"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentAccount"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_fragmentAccount_to_fragmentHomeScreen"
+            app:destination="@id/fragmentHomeScreen"
+            app:enterAnim="@anim/fade_in"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCustomerCare"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentTransactionHistory"
+        android:label="fragment_customer_care"
+        tools:layout="@layout/fragment_transaction_history" >
+        <action
+            android:id="@+id/action_fragmentCustomerCare_to_fragmentHomeScreen"
+            app:destination="@id/fragmentHomeScreen"
+            app:enterAnim="@anim/fade_in"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTrackOrder"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentTrackOrder"
+        android:label="fragment_tracking_order"
+        tools:layout="@layout/fragment_track_order" >
+        <action
+            android:id="@+id/action_fragmentTrackOrder_to_fragmentHomeScreen"
+            app:destination="@id/fragmentHomeScreen"
+            app:enterAnim="@anim/fade_in"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAppTheme"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentAppTheme"
+        android:label="fragment_tracking_order"
+        tools:layout="@layout/fragment_app_theme" >
+        <action
+            android:id="@+id/action_fragmentAppTheme_to_fragmentHomeScreen"
+            app:destination="@id/fragmentHomeScreen"
+            app:enterAnim="@anim/fade_in"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="com.lobomarket.wecart.UserHomeScreen.fragmentSearch"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_fragmentSearch_to_fragmentHomeScreen"
+            app:destination="@id/fragmentHomeScreen" />
+    </fragment>
+</navigation>

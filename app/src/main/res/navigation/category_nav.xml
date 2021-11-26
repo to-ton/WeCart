@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/category_nav"
+    app:startDestination="@id/fragmentCateg1">
+    <fragment
+        android:id="@+id/fragmentCateg1"
+        android:name="com.lobomarket.wecart.CategoryFragments.fragmentCateg1"
+        android:label="fragment_category1"
+        tools:layout="@layout/fragment_category1" >
+        <action
+            android:id="@+id/action_fragmentCateg1_to_fragmentCateg2"
+            app:destination="@id/fragmentCateg2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCateg2"
+        android:name="com.lobomarket.wecart.CategoryFragments.fragmentCateg2"
+        android:label="fragment_category2"
+        tools:layout="@layout/fragment_category2" >
+        <action
+            android:id="@+id/action_fragmentCateg2_to_fragmentCateg3"
+            app:destination="@id/fragmentCateg3" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCateg3"
+        android:name="com.lobomarket.wecart.CategoryFragments.fragmentCateg3"
+        android:label="fragment_category3"
+        tools:layout="@layout/fragment_category3" >
+        <action
+            android:id="@+id/action_fragmentCateg3_to_fragmentCateg4"
+            app:destination="@id/fragmentCateg4" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCateg4"
+        android:name="com.lobomarket.wecart.CategoryFragments.fragmentCateg4"
+        android:label="fragment_category4"
+        tools:layout="@layout/fragment_category4" >
+        <action
+            android:id="@+id/action_fragmentCateg4_to_fragmentCateg1"
+            app:destination="@id/fragmentCateg1" />
+    </fragment>
+</navigation>

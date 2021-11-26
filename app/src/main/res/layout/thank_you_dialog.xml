@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:backgroundTint="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/scooter_delivery"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gilroy_bold"
+            android:textSize="20sp"
+            android:text="Thank you for shopping!" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/gilroy_medium"
+            android:layout_marginTop="5dp"
+            android:text="Our agent received your order" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnToHome"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn"
+            android:fontFamily="@font/gilroy_bold"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Back to Home"
+            android:textAllCaps="false"
+            android:textColor="@color/title_white"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

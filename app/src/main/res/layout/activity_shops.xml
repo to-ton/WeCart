@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dim_white"
+    android:theme="@style/Theme.ShopAcc"
+    tools:context=".UserHomeScreen.ShopsScreen"
+    android:fitsSystemWindows="false"
+    android:id="@+id/coordinatorLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/shopScreenRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <HorizontalScrollView
+                                android:id="@+id/horizontalScrollView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:scrollbars="none"
+                                app:layout_constraintTop_toBottomOf="@+id/categories">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnAll"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_all_product"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="visible"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/bakedGoods"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/baked_goods"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/fruits"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_fruits"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/vegetables"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_vegetables"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/cannedGoods"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_canned"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/beverage"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_beverage"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/dairy"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_dairy"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/hygiene"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_hygiene"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/processedMeat"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_processed_meat"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/condiments"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_condiments"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/plastic"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_plasticware"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/glass"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/category_glassware"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/pork"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/pork_meat"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/chicken"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/chicken_meat"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/beef"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/beef_meat"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/otherMeat"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/other_meat"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone"
+                                        tools:ignore="SpeakableTextPresentCheck" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/fish"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/fish"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/crustaceans"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/crustaceans"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/shellFish"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/shellfish"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/otherSeaFood"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/other_sea_foods"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/dish"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/dishes"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/refreshment"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/refreshments"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/raw"
+                                        android:layout_width="153dp"
+                                        android:layout_height="65dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/raw_ingredients"
+                                        android:onClick="categoryClicked"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+
+                            <TextView
+                                android:id="@+id/categories"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:fontFamily="@font/gilroy_bold"
+                                android:text="Categories"
+                                android:textColor="@color/black_alt"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/shopBannerAppBar" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/shopList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+                                app:layout_constraintVertical_bias="0.0" />
+
+                            <TextView
+                                android:id="@+id/noProducts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No availbale products\nat the moment"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/noProductsAvailabale"
+                                android:layout_width="match_parent"
+                                android:layout_height="500dp"
+                                android:visibility="gone"
+                                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2">
+
+                                <include layout="@layout/no_available_products" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/shopBannerAppBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toTopOf="@+id/categories"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnShopToHome"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="50dp"
+                                        android:background="@drawable/arrow_92_256"
+                                        android:onClick="back" />
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/shopbanner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="@drawable/shop_banner"
+                                        android:scaleType="centerCrop"
+                                        app:shapeAppearanceOverlay="@style/Banner" />
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/bgTint"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="@color/black_transparent"
+                                        app:shapeAppearanceOverlay="@style/Banner" />
+
+                                    <TextView
+                                        android:id="@+id/txtShopName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:fontFamily="@font/gilroy_bold"
+                                        android:gravity="center"
+                                        android:text="Shop Name"
+                                        android:textAlignment="center"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="24sp" />
+
+
+                                </RelativeLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/noInternetShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <include layout="@layout/no_internet_layout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/loadingScreenShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <include layout="@layout/loading_layout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:backgroundTint="@color/main_green"
+                    android:clickable="true"
+                    android:onClick="viewCart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.94"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/collapseAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/topbar_bg"
+                android:backgroundTint="@color/main_green" />
+
+            <TextView
+                android:id="@+id/secondaryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btnSecondaryButton"
+                android:layout_marginStart="20dp"
+                android:layout_toRightOf="@+id/btnSecondaryButton"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:text="Shop Name"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSecondaryButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/arrow_92_256"
+                android:onClick="back" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

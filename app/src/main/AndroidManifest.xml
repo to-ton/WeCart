@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lobomarket.wecart">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WeCart">
+        <activity
+            android:name=".AgentHomeScreen.EditAgentAccount"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".AgentHomeScreen.AgentAccount"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".AdminHomeScreen.IndividualStoreReport"
+            android:exported="true"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".AgentHomeScreen.ScanSellerCode"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".LoginSignUpScreen.EmailValidation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Login"/>
+        <activity
+            android:name=".UserHomeScreen.TrackOrderList"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Home"/>
+        <activity
+            android:name=".SellerHomeScreen.SellerOrderListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".VerificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AgentHomeScreen.AgentGroceryList"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".AdminHomeScreen.AddAgent"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".SellerHomeScreen.EditSellerShopAccount"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".SellerHomeScreen.SellerShopAccount"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".AgentHomeScreen.AgentActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".UserHomeScreen.EditAccountDetails"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Home" />
+        <activity
+            android:name=".AdminHomeScreen.AddSellers"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".SellerHomeScreen.EditDeleteProducts"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".SellerHomeScreen.AddNewProduct"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".UserHomeScreen.ShopsScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ShopAcc" />
+        <activity
+            android:name=".UserHomeScreen.ProductDetails"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ShopAcc" />
+        <activity
+            android:name=".TransactionScreenFragment.TransactionScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Home" />
+        <activity
+            android:name=".AdminHomeScreen.AdminScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".SellerHomeScreen.SellerHomeScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Seller" />
+        <activity
+            android:name=".LoginSignUpScreen.LoginSignupScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Login" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserHomeScreen.UserHomeScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Home" />
+    </application>
+
+</manifest>

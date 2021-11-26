@@ -1,0 +1,198 @@
+<resources>
+    <string name="no_agent"><i>No Available Agent</i></string>
+    <string name="app_name">WeCart</string>
+    <string name="welcome">Welcome!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="loading"><i>Loading...</i></string>
+    <string name="new_user_sign_up_here"><u>New User? Sign Up Here</u></string>
+    <string name="b">B</string>
+    <string name="signup">Signup</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="hello_blank_fragment">Hello Category 1</string>
+    <string name="hello_blank_fragment_2">Hello Category 2</string>
+    <string name="hello_category_4">Hello Category 4</string>
+    <string name="hello_category_3">Hello Category 3</string>
+    <string name="logout">Logout</string>
+    <string name="account">Account</string>
+    <string name="home">Home</string>
+    <string name="track_order">Track Order</string>
+    <string name="customer_care">Customer Care</string>
+    <string name="wecart">WeCart</string>
+    <string name="search">Search</string>
+    <string name="search_title">Search</string>
+    <string name="category">Category</string>
+    <string name="register">Register</string>
+    <string name="or_log_in_as">or log in as</string>
+    <string name="full_name">Full Name</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
+    <string name="cart">Cart</string>
+    <string name="products">Products</string>
+    <string name="orders">Orders</string>
+    <string name="view_cart">View Cart</string>
+    <string name="add_new_address">Add New address</string>
+    <string name="final_price">₱0.00</string>
+    <string name="shipping_cost">₱60.00</string>
+    <string name="municipality">Municipality</string>
+    <string name="street_if_applicable">Street <i>(if applicable)</i></string>
+    <string name="sitio">Sitio</string>
+    <string name="checkout">Checkout</string>
+    <string name="agents">Agents</string>
+    <string name="transaction">Transaction</string>
+    <string name="confirm">Confirm</string>
+    <string name="pay">PAY</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="agent_available">Available Agents</string>
+    <string name="agent_select">Select your agent</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="title_activity_transac_screen">TransacScreen</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="landmark_sitio_purok">Landmark/Sitio/Purok</string>
+    <string name="store">Store Name</string>
+    <string name="email">Email</string>
+    <string name="contact_num">Contact Number</string>
+    <string name="barangay">Barangay</string>
+    <string name="change_pass">Change Password</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="clear">Clear</string>
+    <string name="description_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="offline">You\'re offline</string>
+    <string name="connect_internet">Please connect to the Internet and try again</string>
+    <string name="incorrect_login">The username or password you entered is incorrect.</string>
+    <string name="payment">Select your mode of payment</string>
+    <string name="product_breakdown">Product Breakdown</string>
+    <string name="status">Order Status</string>
+    <string name="store_name"><i>Store Name</i></string>
+    <string name="sales_report">Sales Report</string>
+    <string name="forgot_pass"><u>Forgot Password?</u></string>
+
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="add_seller">Sellers</string>
+    <string name="add_sellers">Add Sellers</string>
+    <string name="new_seller">Add Seller</string>
+    <string name="product_name">Product Name</string>
+    <string name="decription">Decription</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="place_order">Place Order</string>
+    <string name="continue_txt">Continue</string>
+    <string name="title_activity_edit_account_details">EditAccountDetails</string>
+    <string name="enter_code">If you have not yet received an email, please check your spam/junk folder or try resending.</string>
+    <string name="email_sample">johndoe@gmail.com</string>
+    <string name="total_sales">Total Income:</string>
+    <string name="inventory">Inventory:</string>
+    <string name="productSold">Products Sold:</string>
+
+    <string-array name="brgy_lobo">
+        <item name="apar">Apar</item>
+        <item name="balatbat">Balatbat</item>
+        <item name="balibago">Balibago</item>
+        <item name="banalo">Banalo</item>
+        <item name="biga">Biga</item>
+        <item name="bignay">Bignay</item>
+        <item name="calo">Calo</item>
+        <item name="calumpit">Calumpit</item>
+        <item name="fabrica">Fabrica</item>
+        <item name="jaybanga">Jaybanga</item>
+        <item name="lagadlarin">Lagadlarin</item>
+        <item name="mabilog_na_bundok">Mabilog na Bundok</item>
+        <item name="malabrigo">Malabrigo</item>
+        <item name="malalim_na_sanog">Malalim na Sanog</item>
+        <item name="malapad_na_parang">Malapad na Parang</item>
+        <item name="masaguitsit">Masaguitsit</item>
+        <item name="nagtalongtong">Nagtalongtong</item>
+        <item name="nagtoctoc">Nagtoctoc</item>
+        <item name="olo-olo">Olo-olo</item>
+        <item name="pinaghawanan">Pinaghawanan</item>
+        <item name="poblacion">Poblacion</item>
+        <item name="san_miguel">San Miguel</item>
+        <item name="san_nicolas">San Nicolas</item>
+        <item name="sawang">Sawang</item>
+        <item name="soloc">Soloc</item>
+        <item name="tayuman">Tayuman</item>
+    </string-array>
+    <string-array name="shop_type">
+        <item>Fruits and Vegetables</item>
+        <item>Meat Shop</item>
+        <item>Sea Food Shop</item>
+        <item>Grocery</item>
+        <item>Eatery</item>
+        <item>Bakery</item>
+        <item>Plastic ware/Glass ware</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="fruits_vegetable">
+        <item>Fruits</item>
+        <item>Vegetables</item>
+    </string-array>
+    <string-array name="meat_shop">
+        <item>Pork Meat</item>
+        <item>Chicken Meat</item>
+        <item>Beef Meat</item>
+        <item>Other meats</item>
+    </string-array>
+    <string-array name="sea_food">
+        <item>Fish</item>
+        <item>Crustaceans</item>
+        <item>Shellfish</item>
+        <item>Other Sea Food</item>
+    </string-array>
+    <string-array name="grocery">
+        <item>Beverage</item>
+        <item>Canned Goods</item>
+        <item>Condiments</item>
+        <item>Dairy</item>
+        <item>Hygiene</item>
+        <item>Processed Meat</item>
+    </string-array>
+    <string-array name="eatery">
+        <item>Dish</item>
+        <item>Refreshments</item>
+    </string-array>
+    <string-array name="bakery">
+        <item>Baked goods</item>
+        <item>Raw Ingredients</item>
+    </string-array>
+    <string-array name="plastic_glass">
+        <item>Plastic ware</item>
+        <item>Glass ware</item>
+    </string-array>
+    <string-array name="others">
+        <item>Others</item>
+    </string-array>
+    <string-array name="all_categories">
+        <item>Fruits</item>
+        <item>Vegetables</item>
+        <item>Pork Meat</item>
+        <item>Chicken Meat</item>
+        <item>Beef Meat</item>
+        <item>Other meats</item>
+        <item>Fish</item>
+        <item>Crustaceans</item>
+        <item>Shellfish</item>
+        <item>Other Sea Food</item>
+        <item>Beverage</item>
+        <item>Canned Goods</item>
+        <item>Condiments</item>
+        <item>Dairy</item>
+        <item>Hygiene</item>
+        <item>Processed Meat</item>
+        <item>Dish</item>
+        <item>Baked goods</item>
+        <item>Plastic ware</item>
+        <item>Glass ware</item>
+        <item>Others</item>
+    </string-array>
+</resources>

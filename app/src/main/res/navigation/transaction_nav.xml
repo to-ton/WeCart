@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transaction_nav"
+    app:startDestination="@id/cartFragment">
+
+    <fragment
+        android:id="@+id/fragmentAgentSelector"
+        android:name="com.lobomarket.wecart.TransactionScreenFragment.fragmentAgentSelector"
+        android:label="fragment_agent_selector"
+        tools:layout="@layout/fragment_agent_selector" >
+        <action
+            android:id="@+id/action_fragmentAgentSelector_to_fragmentTransaction"
+            app:destination="@id/fragmentTransaction"
+            app:enterAnim="@anim/slide_left_to_right"
+            app:exitAnim="@anim/wait_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_l2r_reverse"
+            app:popUpTo="@id/fragmentTransaction"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTransaction"
+        android:name="com.lobomarket.wecart.TransactionScreenFragment.fragmentTransaction"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_place_order" >
+        <action
+            android:id="@+id/action_fragmentTransaction_to_fragmentAgentSelector"
+            app:destination="@id/fragmentAgentSelector"
+            app:enterAnim="@anim/slide_right_to_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+        <action
+            android:id="@+id/action_fragmentTransaction_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/cartFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.lobomarket.wecart.TransactionScreenFragment.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_fragmentTransaction2"
+            app:destination="@id/fragmentTransaction"
+            app:enterAnim="@anim/slide_right_to_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_r2l_reverse" />
+    </fragment>
+</navigation>
